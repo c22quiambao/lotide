@@ -7,7 +7,7 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-const tail = function(passedArray) { //function to get tail of the array
+/* const tail = function(passedArray) { //function to get tail of the array
   //console.log("passedArray " , passedArray);
   const newArray = [];
   //console.log("Initial newArray " , newArray);
@@ -22,6 +22,13 @@ const tail = function(passedArray) { //function to get tail of the array
   }
   return newArray;
     
+}; */
+
+const tail = function(passedArray) { //function to get tail of the array
+  //console.log("passedArray " , passedArray);
+  //console.log("Initial newArray " , newArray);
+  const newArray = passedArray.slice(1);
+  return newArray;
 };
   
     
@@ -54,11 +61,11 @@ let arr2 = tail(letter);
 //console.log("original array:" , letter);
 //console.log("new array:", arr2);
 assertEqual(letter.length, 1); // ensure we get back 1 elements
-assertEqual(arr2, null); // ensure first element is null
+assertEqual(arr2.length, 0); // ensure first element is null
 
 // Test Case 3
 const emptyArray = [];
 let arr3 = tail(emptyArray);
 //console.log("original array:" , emptyArray);
 //console.log("new array:", arr3);
-assertEqual(arr3, null); // ensure first element is null
+assertEqual(arr3.length, 0); // ensure first element is null
