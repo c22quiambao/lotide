@@ -14,9 +14,7 @@ const eqArrays = function(arr1, arr2) {
   if (arr1.length === arr2.length) {
     // Iterate over the indices of one array (assuming both arrays have the same length)
     for (let i = 0; i < arr1.length; i++) {
-      const element1 = arr1[i];
-      const element2 = arr2[i];
-      if (element1 !== element2) {
+      if (arr1[i] !== arr2[i]) {
         return false;
       }
     } return true;
