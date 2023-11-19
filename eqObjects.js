@@ -33,7 +33,6 @@ const eqObjects = function(object1, object2) {
   
   // check if created arrays are equal
   if (obj1KeysArr.length !== obj2KeysArr.length) {
-    console.log("checking length");
     return false;
   }
 
@@ -48,7 +47,10 @@ const eqObjects = function(object1, object2) {
     //check if the object value being checked is an array
     if (Array.isArray(object1[key1]) && Array.isArray(object2[key1])) {
       // call eqArrays to check array of values
-      eqArrays(object1[key1],object2[key1]);
+      const arrayChecking = eqArrays(object1[key1],object2[key1]);
+      if (!arrayChecking){
+        return false;
+      }
     } else {
       //check if the primitive element is NOT equal to
       if (object1[key1] !== object2[key1]) {
@@ -85,3 +87,7 @@ assertEqual(eqObjects(multiColorShirtObject  , anotherMultiColorShirtObject), tr
 console.log("-------TC 6 --------");
 const longSleeveMultiColorShirtObject = { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
 assertEqual(eqObjects(multiColorShirtObject  , longSleeveMultiColorShirtObject), false);
+
+
+const diffMultiColorShirtObject = { size: "medium", colors: ["red", "white"] };
+assertEqual(eqObjects(multiColorShirtObject  , diffMultiColorShirtObject), false); // => true
