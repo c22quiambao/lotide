@@ -17,7 +17,7 @@ const findKeyByValue = function(inputObject, inputValue) {
 
   // iterate over object
   for (let valtoSearch of objKeysArr) {
-    if (`${inputObject[valtoSearch]}` === inputValue) {
+    if (inputObject[valtoSearch] === inputValue) {
       return `${valtoSearch}`;
     }
   }
