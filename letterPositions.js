@@ -20,14 +20,13 @@ const assertArraysEqual = function(actual, expected) {
 };
 
 const letterPositions = function(sentence) {
-  const sentenceArray = sentence.replace(/[^a-zA-Z/s]/g, '');
+  const sentenceArray = sentence.replace(/[^a-zA-Z/s0-9]/g, '');
   //const sentenceArray = sentence.split('');
   const results = {};
   // loop through array and input into object
   for (let i = 0; i <= sentenceArray.length - 1; i++) {
     const currentElement = sentenceArray[i];
-    //results[currentElement] = i;
-    if (results[currentElement]) {
+     if (results[currentElement]) {
       results[currentElement].push(i);
     } else {
       results[currentElement] = [i];
