@@ -37,10 +37,9 @@ const eqObjects = function(object1, object2) {
   }
 
   // check if arrays sorted have identical keys
-  for (let key of obj1KeysArr) {
-    if (!object2.hasOwnProperty(key)) {
-      return false;
-    }
+  const areKeysEqual = obj1KeysArr.sort().join('') === obj2KeysArr.sort().join('');
+  if (!areKeysEqual) {
+    return false;
   }
 
   // loop through the array to get the corresponding object value needed
@@ -49,7 +48,7 @@ const eqObjects = function(object1, object2) {
     if (Array.isArray(object1[key1]) && Array.isArray(object2[key1])) {
       // call eqArrays to check array of values
       const arrayChecking = eqArrays(object1[key1],object2[key1]);
-      if (!arrayChecking){
+      if (!arrayChecking) {
         return false;
       }
     } else {
