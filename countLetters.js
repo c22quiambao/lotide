@@ -12,16 +12,17 @@ const assertEqual = function(actual, expected) {
 // Function to count letters
 const countLetters = function (inputString){
   //clean the string and convert into an array
-  const cleanedString = inputString.replace(/[^\w]/g, '');
-  const letterArray = cleanedString.split('').map(function(n) {
+  const letterArray = inputString.split('').map(function(n) {
     return n;});
-
+    console.log(letterArray);
   //create object to hold key value pair of letters
   const letters = {};
 
   //loop through the array
   letterArray.forEach((x) => {
+    if (x !== ' ') {
     letters[x] = (letters[x] || 0) + 1;
+    }
   });
   return letters;
 }
