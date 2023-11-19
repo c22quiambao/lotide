@@ -14,11 +14,8 @@ const findKey = function(object, callback) {
 
   // convert object to key's array
   const objKeysArr = Object.keys(object);
-  console.log(objKeysArr);
-
   // iterate over object
   for (let key of objKeysArr) {
-    console.log(key);
     if (object[key] && callback(object[key])) {
       return key;
     }
