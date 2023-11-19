@@ -37,9 +37,10 @@ const eqObjects = function(object1, object2) {
   }
 
   // check if arrays sorted have identical keys
-  const areKeysEqual = obj1KeysArr.sort().join('') === obj2KeysArr.sort().join('');
-  if (!areKeysEqual) {
-    return false;
+  for (let key of obj1KeysArr) {
+    if (!object2.hasOwnProperty(key)) {
+      return false;
+    }
   }
 
   // loop through the array to get the corresponding object value needed
@@ -88,6 +89,6 @@ console.log("-------TC 6 --------");
 const longSleeveMultiColorShirtObject = { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
 assertEqual(eqObjects(multiColorShirtObject  , longSleeveMultiColorShirtObject), false);
 
-
+console.log("-------TC 7 --------");
 const diffMultiColorShirtObject = { size: "medium", colors: ["red", "white"] };
 assertEqual(eqObjects(multiColorShirtObject  , diffMultiColorShirtObject), false); // => true
