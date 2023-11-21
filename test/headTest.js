@@ -20,7 +20,7 @@ describe("# Tests for the Lotide head function #", () => {
   });
 
   it("returns 1 for[1,2,3]", () => {
-    assert.strictEqual(head([1,2,3]), 5);
+    assert.strictEqual(head([1,2,3]), 1);
   });
 
   it("returns \"Hello\" for [\"Hello\", \"Lighthouse\", \"Labs\"] ", () => {
@@ -28,10 +28,10 @@ describe("# Tests for the Lotide head function #", () => {
   });
 
   it("returns \"Jude\" for \"Hello\"", () => {
-    assert.strictEqual(head(["Jude"]), "Hello");
+    assert.strictEqual(head(["Jude"]), "Jude");
   });
 
   it("returns null for \"Hello\"", () => {
-    assert.isFalse(head([]), "Hello");
+    assert.strictEqual(head([]), undefined);
   });
 });
