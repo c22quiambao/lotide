@@ -6,19 +6,36 @@ const assert = require('chai').assert;
 //Test Cases
 describe("# Tests for the Lotide middle function #", () => {
   it("Should return [] given []", () => {
-    assert.deepEqual(middle([]),[]);
+    const array = [];
+    const result = middle(array);
+    assert.deepEqual(result, []);
+    assert.strictEqual(array.length, 0);
   });
 
   it("Should return [] given [1]", () => {
-    assert.deepEqual(middle([1]),[]);
+    const array = [1];
+    const result = middle(array);
+    assert.deepEqual(result, []);
+    assert.strictEqual(array.length, 1);
   });
+
   it("Should return [] given [1,2]", () => {
-    assert.deepEqual(middle([1,2]),[]);
+    const array = [1,2];
+    const result = middle(array);
+    assert.deepEqual(result, []);
+    assert.strictEqual(array.length, 2);
   });
   it("Should return [2, 3] given [1, 2, 3, 4]", () => {
-    assert.deepEqual(middle([1, 2, 3, 4]),[2, 3]);
+    const array = [1, 2, 3, 4];
+    const result = middle(array);
+    assert.deepEqual(result, [2, 3]);
+    assert.strictEqual(array.length, 4);
   });
+
   it("Should return [3] given [1, 2, 3, 4, 5]", () => {
-    assert.deepEqual(middle([1, 2, 3, 4, 5]),[3]);
+    const array = [1, 2, 3, 4, 5];
+    const result = middle(array);
+    assert.deepEqual(result, [3]);
+    assert.strictEqual(array.length, 5);
   });
 });
