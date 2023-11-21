@@ -1,6 +1,5 @@
 //Import functions needed
 const assertArraysEqual = require('../assertArraysEqual');
-const eqArrays = require('../eqArrays');
 const middle = require('../middle');
 
 //Test Cases
