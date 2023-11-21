@@ -1,10 +1,37 @@
 // test/assertEqualTest.js
 const head = require('../head');
-const assertEqual = require('../assertEqual');
+//const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 
 // TEST CODE
-assertEqual(head([5,6,7]), 5);
-assertEqual(head([1,2,3]), 5);
-assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
-assertEqual(head(["Jude"]), "Hello");
-assertEqual(head(), "Hello");
+/**/
+
+describe("# Tests for the Lotide head function #", () => {
+  it("returns 1 for [1, 2, 3]", () => {
+    assert.strictEqual(head([1, 2, 3]), 1);
+  });
+
+  it("returns '5' for ['5']", () => {
+    assert.strictEqual(head(['5']), '5');
+  });
+
+  it("returns 5 for [5,6,7]]", () => {
+    assert.strictEqual(head([5,6,7]), 5);
+  });
+
+  it("returns 1 for[1,2,3]", () => {
+    assert.strictEqual(head([1,2,3]), 5);
+  });
+
+  it("returns \"Hello\" for [\"Hello\", \"Lighthouse\", \"Labs\"] ", () => {
+    assert.strictEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
+  });
+
+  it("returns \"Jude\" for \"Hello\"", () => {
+    assert.strictEqual(head(["Jude"]), "Hello");
+  });
+
+  it("returns null for \"Hello\"", () => {
+    assert.isFalse(head([]), "Hello");
+  });
+});
